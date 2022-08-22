@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp-web-shallow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YacineSteeve/whatsapp-web-front-shallow-clone.git"
+  },
+  "author": "Yacine BOUKARI <steeveboukari9@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YacineSteeve/whatsapp-web-front-shallow-clone/issues"
+  },
+  "homepage": "https://github.com/YacineSteeve/whatsapp-web-front-shallow-clone#readme"
+}
