@@ -1,6 +1,5 @@
 <template>
-
-
+    <h1>Hello</h1>
 </template>
 
 
@@ -10,7 +9,6 @@
 </script>
 
 
-<style scoped>
-
+<style>
 
 </style>
