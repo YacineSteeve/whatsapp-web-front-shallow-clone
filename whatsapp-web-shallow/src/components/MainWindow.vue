@@ -20,15 +20,13 @@
             const mainWindow = document.getElementsByClassName('main-window-container')[0];
 
             if (window.innerWidth < window.screen.width) {
-                mainWindow.style.marginTop = '0';
-                mainWindow.style.marginLeft = '0';
-                mainWindow.style.marginRight = '0';
+                mainWindow.style.margin = '0';
                 mainWindow.style.width = '100%';
+                mainWindow.style.height = '100%';
             } else {
-                mainWindow.style.marginTop = '20px';
-                mainWindow.style.marginLeft = '20px';
-                mainWindow.style.marginRight = '20px';
+                mainWindow.style.margin = '20px';
                 mainWindow.style.width = String(window.innerWidth - 40) + 'px';
+                mainWindow.style.height = String(window.innerHeight - 40) + 'px';
             }
         }
 
@@ -44,25 +42,25 @@
     .main-back-container {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
     }
 
     .main-back-header {
-        margin: 0;
-        height: 20%;
+        height: 17.5vh;
+        min-height: 8.3vw;
         background-color: #128c7e;
     }
 
     .main-back-footer {
-        height: 90%;
+        flex: 1;
+        background-color: #e9eaec;
     }
 
     .main-window-container {
         position: absolute;
         top: 0;
         left: 0;
-        margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 20px;
         background-color: #f0f2f5;
     }
 </style>

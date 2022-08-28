@@ -1,6 +1,6 @@
 <template>
     <div class="offline-container">
-        <div class="img-wrapper">
+        <div class="offline-img-wrapper">
             <img 
                 src="../assets/images/intro-connection-light.jpg"
                 alt="Please make sure you have an internet connection" />
@@ -13,10 +13,7 @@
 </template>
 
 
-<script>
-
-
-</script>
+<script></script>
 
 
 <style scoped>
@@ -29,7 +26,7 @@
         width: 100%;
     }
 
-    .offline-container .img-wrapper img {
+    .offline-container .offline-img-wrapper img {
         height: 40vh;
         width: 40vh;
         border-radius: 50%;

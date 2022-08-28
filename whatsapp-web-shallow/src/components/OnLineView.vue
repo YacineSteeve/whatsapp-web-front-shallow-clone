@@ -1,14 +1,29 @@
 <template>
-    <h1>Hello</h1>
+    <div class="chats-inbox-container">
+        <ChatsSide/>
+        <Inbox v-if="inboxIsActive"/>
+        <Intro v-else/>
+    </div>
 </template>
 
 
-<script>
+<script setup>
+    import ChatsSide from './ChatsSide.vue'
+    import Inbox from './Inbox.vue'
+    import Intro from './Intro.vue'
+    import { computed } from 'vue'
+    import { useStore } from 'vuex'
 
-
+    const inboxIsActive = computed(() => useStore().state.inboxIsActive);
 </script>
 
 
-<style>
-
+<style scoped>
+    .chats-inbox-container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+    }
 </style>
