@@ -76,4 +76,8 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .fa-lock-open {
+        height: .6rem;
+    }
 </style>

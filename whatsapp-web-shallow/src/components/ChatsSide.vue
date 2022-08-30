@@ -10,10 +10,14 @@
     // For testing
 
     import { useStore } from 'vuex';
+    
     const store = useStore();
+
     const switchInbox = () => {
         store.commit('switchInboxStatus')
     };
+
+    const chats = store.state.chats;
 
     /* ********************************* */
 </script>
