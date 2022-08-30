@@ -46,7 +46,7 @@
     }
 
     .main-back-header {
-        height: 17.5vh;
+        height: 8.3vw;
         min-height: 8.3vw;
         background-color: #128c7e;
     }

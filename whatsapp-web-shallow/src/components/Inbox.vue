@@ -1,11 +1,17 @@
 <template>
     <div class="inbox-container">
-        <h1>Hello2</h1>
+        <NavMenu>
+            <h1>Hello</h1>
+        </NavMenu>
+        <div class="inbox-component">
+            <h1>It's me</h1>
+        </div>
     </div>
 </template>
 
 
 <script>
+    import NavMenu from './NavMenu.vue';
 
 
 </script>
@@ -16,6 +22,9 @@
         display: flex;
         flex-direction: column;
         flex: 1;
-        background-color: rgba(13, 144, 45, .5);
+    }
+
+    .inbox-component {
+        height: 35vh;
     }
 </style>

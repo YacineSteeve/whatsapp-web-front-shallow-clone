@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="nav-menu-container">
         <h1>Hello</h1>
     </div>
 </template>
@@ -12,6 +12,9 @@
 
 
 <style scoped>
-
-
+    .nav-menu-container {
+        width: 100%;
+        flex: 1;
+        background-color: #f0f1f4;
+    }
 </style>

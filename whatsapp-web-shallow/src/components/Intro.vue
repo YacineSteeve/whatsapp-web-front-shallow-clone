@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="encrytion-text">
-            <font-awesome-icon icon="fa-solid fa-lock-open" />
+            <font-awesome-icon icon="fas fa-lock-open" />
             <span>&ensp;Not encrypted at all</span>
         </div>
     </div>

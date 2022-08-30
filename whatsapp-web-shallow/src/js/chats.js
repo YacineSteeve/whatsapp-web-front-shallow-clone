@@ -117,7 +117,6 @@ const chats = [
 		},
 		group: false,
 		pinned: true,
-		typing: false,
 	},
 	{
 		id: 2,
@@ -204,7 +203,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 	{
 		id: 3,
@@ -309,7 +307,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 	{
 		id: 4,
@@ -414,7 +411,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 
 	{
@@ -508,7 +504,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 	{
 		id: 6,
@@ -613,7 +608,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 
 	{
@@ -707,7 +701,6 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 
 	{
@@ -801,8 +794,7 @@ const chats = [
 		},
 		group: false,
 		pinned: false,
-		typing: false,
 	},
 ];
-
+// console.log(JSON.stringify(chats));
 export default chats;
