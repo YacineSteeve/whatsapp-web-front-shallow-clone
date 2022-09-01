@@ -43,7 +43,7 @@
     }
 
     .search-input-container button {
-        width: 50px;
+        width: 47px;
         opacity: .5;
         border: none;
         background: transparent;

@@ -115,7 +115,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: true,
 	},
 	{
@@ -201,7 +200,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 	{
@@ -305,7 +303,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 	{
@@ -409,8 +406,7 @@ const chats = [
 				},
 			],
 		},
-		group: false,
-		pinned: false,
+		pinned: true,
 	},
 
 	{
@@ -502,7 +498,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 	{
@@ -606,7 +601,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 
@@ -699,7 +693,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 
@@ -792,7 +785,6 @@ const chats = [
 				},
 			],
 		},
-		group: false,
 		pinned: false,
 	},
 ];

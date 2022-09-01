@@ -11,20 +11,16 @@
     const attrs = useAttrs();
 
     const [pictureUrl, size] = [`url(${attrs['url']})`, attrs['size']];
-
-    const pad = 0.0095 * window.screen.height;
-    
-    const paddingInline = String(2 * pad) + 'px';
-    const paddingBlock = String(pad) + 'px';
 </script>
 
 
 <style scoped>
     .profile-picture-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: fit-content;
         height: 100%;
-        padding-inline: v-bind(paddingInline);
-        padding-block: v-bind(paddingBlock);
     }
 
     .profile-picture {

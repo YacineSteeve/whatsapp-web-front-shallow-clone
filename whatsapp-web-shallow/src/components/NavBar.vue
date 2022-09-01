@@ -25,6 +25,7 @@
     import IconWrapper from './IconWrapper.vue';
 
     const navbarHeight = String(0.083 * window.screen.width - 20) + 'px';
+    const paddingLeft = String(0.019 * window.screen.height) + 'px';
 </script>
 
 
@@ -35,6 +36,7 @@
         align-items: stretch;
         border-bottom: thin solid #d9dadc;
         height: v-bind(navbarHeight);
+        min-height: v-bind(navbarHeight);
     }
 
     .navbar-container .menu-container {
@@ -44,6 +46,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-
+        padding-left: v-bind(paddingLeft);
     }
 </style>

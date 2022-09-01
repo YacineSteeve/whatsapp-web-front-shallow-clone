@@ -17,3 +17,13 @@ html, body, .main-container {
   height: 100%;
   position: relative;
 }
+
+.scrolled::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: 100%;
+  background: transparent;
+}
+
+.scrolled::-webkit-scrollbar-thumb {
+  background: #d9dadc;
+}
