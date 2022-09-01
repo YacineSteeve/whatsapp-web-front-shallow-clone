@@ -12,18 +12,9 @@
 
 <script setup>
     import SearchInput from './SearchInput.vue'
-    import { onMounted } from 'vue';
 
-    onMounted(() => {
-        const container = document.getElementsByClassName('nav-search-container')[0];
-        const filterDiv = document.getElementsByClassName('nav-search-filter')[0];
-
-        container.style.height = String(0.055 * window.screen.height) + 'px'
-        container.style.paddingInline = String(0.0075 * window.screen.width) + 'px'
-        container.style.paddingBlock = String(0.0075 * window.screen.height) + 'px'
-
-        filterDiv.style.width = String(0.022 * window.screen.width) + 'px'
-    });
+    const paddingInline = String(0.01 * window.screen.width) + 'px';
+    const paddingBlock = String(0.0075 * window.screen.height) + 'px';
 </script>
 
 
@@ -32,12 +23,16 @@
         display: flex;
         background-color: #ffffff;
         width: 100%;
+        gap: v-bind(paddingInline);
+        padding-inline: v-bind(paddingInline);
+        padding-block: v-bind(paddingBlock);
+        flex: 1;
     }
 
     .nav-search-container .nav-search-filter {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        border-radius: 8px;
+        width: fit-content;
+        height: 100%;
     }
 </style>

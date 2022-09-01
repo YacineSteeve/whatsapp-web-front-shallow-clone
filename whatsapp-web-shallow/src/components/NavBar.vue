@@ -1,6 +1,17 @@
 <template>
     <div class="navbar-container">
-        <NavMenu />
+        <nav-menu>
+            <div class="menu-container">
+                <ProfilePicture 
+                    url="./src/assets/images/profile-picture-boy-1.jpeg" 
+                    size="40px"/>
+                <menu-icons>
+                    <IconWrapper icon="fa-solid fa-spinner"/>
+                    <IconWrapper icon="fa-solid fa-message"/>
+                    <IconWrapper icon="fa-solid fa-ellipsis-vertical"/>
+                </menu-icons>
+            </div>
+        </nav-menu>
         <NavSearch />
     </div>
 </template>
@@ -9,15 +20,11 @@
 <script setup>
     import NavMenu from './NavMenu.vue'
     import NavSearch from './NavSearch.vue'
-    import { onMounted } from 'vue'
+    import ProfilePicture from './ProfilePicture.vue';
+    import MenuIcons from './MenuIcons.vue';
+    import IconWrapper from './IconWrapper.vue';
 
-    const height = String(0.083 * window.screen.width - 20) + 'px';
-
-    onMounted(() => {
-        const navBar = document.getElementsByClassName('navbar-container')[0];
-        navBar.style.height = height;
-        navBar.style.minHeight = height;
-    });
+    const navbarHeight = String(0.083 * window.screen.width - 20) + 'px';
 </script>
 
 
@@ -25,7 +32,18 @@
     .navbar-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: stretch;
         border-bottom: thin solid #d9dadc;
+        height: v-bind(navbarHeight);
+    }
+
+    .navbar-container .menu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
     }
 </style>

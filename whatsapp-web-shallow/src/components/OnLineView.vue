@@ -1,7 +1,7 @@
 <template>
     <div class="chats-inbox-container">
         <ChatsSide/>
-        <Inbox v-if="inboxIsActive"/>
+        <SelectedChat v-if="inboxIsActive"/>
         <Intro v-else/>
     </div>
 </template>
@@ -9,7 +9,7 @@
 
 <script setup>
     import ChatsSide from './ChatsSide.vue'
-    import Inbox from './Inbox.vue'
+    import SelectedChat from './SelectedChat.vue'
     import Intro from './Intro.vue'
     import { computed } from 'vue'
     import { useStore } from 'vuex'

@@ -6,7 +6,7 @@ export default createStore({
         chats,
         searchValueChats: '',
         searchValueInbox: '',
-        inboxIsActive: false,
+        inboxIsActive: true,
         activeInbox: ''
     },
     mutations: {

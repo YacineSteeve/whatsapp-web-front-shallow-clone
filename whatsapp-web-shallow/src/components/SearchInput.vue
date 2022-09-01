@@ -36,7 +36,7 @@
     .search-input-container {
         display: flex;
         align-items: stretch;
-        border-radius: 8px;
+        border-radius: 7px;
         background-color: #f0f1f4;
         width: 100%;
         height: 100%;
