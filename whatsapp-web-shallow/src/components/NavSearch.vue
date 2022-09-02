@@ -2,7 +2,7 @@
     <div class="nav-search-container">
         <SearchInput 
             placeholder="Search or start new chat" 
-            model="searchValueInbox"/>
+            model="searchValueChats"/>
         <div class="nav-search-filter">
             <font-awesome-icon icon="fa-solid fa-bars"/>
         </div>

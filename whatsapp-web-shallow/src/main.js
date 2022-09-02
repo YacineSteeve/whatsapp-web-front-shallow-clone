@@ -13,7 +13,8 @@ import {
     faMessage, 
     faEllipsisVertical, 
     faInbox,
-    faThumbTack } from '@fortawesome/free-solid-svg-icons'
+    faThumbTack,
+    faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
@@ -25,6 +26,7 @@ library.add(faMessage)
 library.add(faEllipsisVertical)
 library.add(faInbox)
 library.add(faThumbTack)
+library.add(faChevronDown)
 
 const root = document.querySelector(':root')
 

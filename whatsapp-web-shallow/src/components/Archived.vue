@@ -15,7 +15,7 @@
 
 <script setup>
     const archivedHeight = String(0.055 * window.screen.height) + 'px';
-    const elementsPadding = String(0.0185 * window.screen.height) + 'px';
+    const elementsPadding = String(0.017 * window.screen.height) + 'px';
 </script>
 
 
@@ -36,8 +36,13 @@
         cursor: pointer;
     }
 
+    .archived-container:focus {
+        border: 2px solid black;
+    }
+
     .archived-container > * {
         display: flex;
+        font-size: .85rem;
         height: 100%;
         align-items: center;
         padding-inline: v-bind(elementsPadding);

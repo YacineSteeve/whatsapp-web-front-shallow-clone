@@ -54,4 +54,33 @@ const getRandomSentence = () => {
     return sentences[randomIndex];
 };
 
-export default getRandomSentence;
+const getRawMessages = (chat) => {
+	return [].concat(...Object.values(chat.messages)).map((message) => {
+		return message.content
+		? message.content.toLowerCase()
+		: '';
+	})
+}
+
+const chatMatchSearch = (chat, search) => {
+	const checkedProperties = [
+		chat.name.toLowerCase(),
+		chat.whatsapp_name.toLowerCase(),
+		chat.phone_number.toLowerCase(),
+		...getRawMessages(chat)
+	]
+
+	return search.some((word) => {
+
+		const matchingProps = checkedProperties
+		.map((prop) => prop.includes(word))
+		.filter((match) => match === true);
+
+		return matchingProps.length >= 1;
+	})
+}
+
+export { 
+	getRandomSentence, 
+	chatMatchSearch
+};

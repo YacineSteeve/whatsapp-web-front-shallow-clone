@@ -10,6 +10,7 @@
     </div>
 </template>
 
+// TODO: Change px values to reponsive ones
 
 <script setup>
     import { useAttrs, computed } from 'vue';
@@ -29,6 +30,8 @@
             })
         }
     });
+
+    const elementsPadding = String(0.017 * window.screen.height) + 'px';
 </script>
 
 
@@ -36,17 +39,18 @@
     .search-input-container {
         display: flex;
         align-items: stretch;
-        border-radius: 7px;
+        border-radius: .35rem;
         background-color: #f0f1f4;
         width: 100%;
         height: 100%;
     }
 
     .search-input-container button {
-        width: 47px;
+        width: fit-content;
         opacity: .5;
         border: none;
         background: transparent;
+        padding-inline: v-bind(elementsPadding);
     }
 
     .search-input-container button:hover {
@@ -54,8 +58,8 @@
     }
 
     .search-input-container input {
-        font-size: 14px;
-        padding-left: 20px;
+        font-size: .7rem;
+        padding-left: v-bind(elementsPadding);
         flex: 1;
         border: none;
         background: transparent;

@@ -5,14 +5,13 @@ import ppGirl4 from "../assets/images/profile-picture-girl-4.jpeg";
 import ppBoy1 from "../assets/images/profile-picture-boy-1.jpeg";
 import ppBoy2 from "../assets/images/profile-picture-boy-2.jpeg";
 import ppBoy3 from "../assets/images/profile-picture-boy-3.jpeg";
-import getRandomSentence from "./helpers.js";
-
+import { getRandomSentence } from "./helpers.js";
 
 const chats = [
 	{
 		id: 1,
 		profile_picture: ppGirl3,
-		name: "Love of my life ❤️💜",
+		name: "Love of my fucking life ❤️💜",
 		phone_number: "+2348123456789",
 		whatsapp_name: "Beyonce",
 		unread: 3,
@@ -151,54 +150,6 @@ const chats = [
 					status: "read",
 				},
 			],
-
-			YESTERDAY: [
-				{
-					content: getRandomSentence(),
-					sender: 2,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 2,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
-				},
-			],
-
-			TODAY: [
-				{
-					content: getRandomSentence(),
-					sender: 2,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 2,
-					time: "09:11:26",
-					status: null,
-				},
-			],
 		},
 		pinned: false,
 	},
@@ -210,7 +161,7 @@ const chats = [
 		whatsapp_name: "titi123",
 		unread: 0,
 		messages: {
-			"04/06/2021": [
+			"04/27/2021": [
 				{
 					content: getRandomSentence(),
 					sender: 3,
@@ -227,72 +178,6 @@ const chats = [
 					content: getRandomSentence(),
 					sender: 3,
 					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "sent",
-				},
-			],
-
-			YESTERDAY: [
-				{
-					content: getRandomSentence(),
-					sender: 3,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 3,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
-				},
-			],
-
-			TODAY: [
-				{
-					content: getRandomSentence(),
-					sender: 3,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 3,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					image: true,
-					sender: 3,
-					time: "09:12:26",
-					status: null,
-				},
-				{
-					image: true,
-					sender: null,
-					time: "09:13:26",
 					status: null,
 				},
 				{
@@ -364,45 +249,6 @@ const chats = [
 					sender: null,
 					time: "09:15:45",
 					status: "read",
-				},
-			],
-
-			TODAY: [
-				{
-					content: getRandomSentence(),
-					sender: 4,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 4,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 4,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: 4,
-					time: "09:11:26",
-					status: null,
 				},
 			],
 		},
@@ -561,45 +407,6 @@ const chats = [
 					status: "read",
 				},
 			],
-
-			TODAY: [
-				{
-					content: getRandomSentence(),
-					sender: 6,
-					time: "08:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 6,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 6,
-					time: "09:11:26",
-					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: 6,
-					time: "09:11:26",
-					status: null,
-				},
-			],
 		},
 		pinned: false,
 	},
@@ -607,9 +414,9 @@ const chats = [
 	{
 		id: 7,
 		profile_picture: ppGirl3,
-		name: "Karen Okonkwo",
+		name: "Julie Okonkwo",
 		phone_number: "+2348123456789",
-		whatsapp_name: "Karen",
+		whatsapp_name: "Jul",
 		unread: 0,
 		messages: {
 			"04/06/2021": [

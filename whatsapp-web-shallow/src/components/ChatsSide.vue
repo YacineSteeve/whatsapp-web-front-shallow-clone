@@ -4,7 +4,7 @@
         <all-chats>
             <Archived/>
             <Chat 
-                v-for="chat of chats" 
+                v-for="chat of filteredChats" 
                 v-bind:chat="chat"
                 v-bind:key="chat.id"/>
         </all-chats>
@@ -20,11 +20,24 @@
     import AllChats from './AllChats.vue';
     import Archived from './Archived.vue';
     import Chat from './Chat.vue';
+    import { computed } from 'vue';
     import { useStore } from 'vuex';
+    import { chatMatchSearch } from '../js/helpers.js'
     
     const store = useStore();
 
-    const chats = store.state.chats;
+    const filteredChats = computed(() => {
+        let searchText = store.state.searchValueChats;
+
+        if (searchText) {
+            searchText = searchText.split(' ').map((word) => word.toLowerCase());
+            return store.state.chats.filter((chat) => {
+                return chatMatchSearch(chat, searchText)
+            })
+        } else {
+            return store.state.chats
+        }
+    });
 
     const containerMinWidth = String(0.22 * window.screen.width) + 'px';
 
