@@ -2,7 +2,8 @@
     <div 
         class="chat-container"
         v-on:mouseenter="state.isHovered = true"
-        v-on:mouseleave="state.isHovered = false">
+        v-on:mouseleave="state.isHovered = false"
+        v-on:click="setActive">
         <ProfilePicture 
             v-bind:url="chat.profile_picture"
             v-bind:size="profilePictureSize"/>
@@ -26,14 +27,32 @@
                 v-bind:title="lastMessage.content"
                 class="chat-preview detail">
                 <div class="chat-preview-message left">
+                    <span v-show="lastMessage.sender === null">
+                        <font-awesome-icon
+                            v-show="lastMessage.status === null"
+                            icon="fa-solid fa-check" />
+                        <font-awesome-icon
+                            v-show="lastMessage.status === 'unread'"
+                            icon="fa-solid fa-check-double" />
+                        <font-awesome-icon
+                            v-show="lastMessage.status === 'read'"
+                            icon="fa-solid fa-check-double" color="blue"/>
+                    </span>
                     {{ lastMessage.content }}
                 </div>
                 <div class="chat-icons right" id="chat-icons">
-                    <span v-if="chat.pinned">&ensp;</span>
+                    
+                    <span v-show="chat.pinned">&ensp;</span>
                     <font-awesome-icon 
-                        v-if="chat.pinned"
+                        v-show="chat.pinned"
                         icon="fa-solid fa-thumbtack" />
-                    <span>&ensp;</span>
+                    
+                    <span v-show="chat.unread >= 1">&ensp;</span>
+                    <div 
+                        v-show="chat.unread >= 1"
+                        class="chat-unread">&ensp;{{ chat.unread }}&ensp;</div>
+                    
+                    <span v-show="state.isHovered">&ensp;</span>
                     <font-awesome-icon
                         v-show="state.isHovered"
                         icon="fa-solid fa-chevron-down" />
@@ -45,7 +64,8 @@
 
 
 <script setup>
-    import { useAttrs, reactive } from 'vue';
+    import { useAttrs, reactive, computed } from 'vue';
+    import { useStore } from 'vuex';
     import ProfilePicture from './ProfilePicture.vue';
 
     const attrs = useAttrs();
@@ -55,6 +75,15 @@
     const lastDate = Object.keys(chat.messages).pop();
 
     const lastMessage = [...chat.messages[lastDate]].pop();
+
+    const state = reactive({ isHovered: false });
+
+    const store = useStore();
+
+    const setActive = () => {
+        chat.unread = 0;
+        store.commit('setActiveInbox', chat.id)
+    };
     
     const chatHeight = String(
         0.083 * window.screen.width 
@@ -64,7 +93,22 @@
 
     const profilePictureSize = String(0.0325 * window.screen.width) + 'px';
 
-    const state = reactive({ isHovered: false });
+    const activeColor = computed(() => {
+        if (chat.id === store.state.activeInbox) {
+            return '#e0e1e488';
+        } else {
+            if (state.isHovered){
+                return '#f0f1f4';
+            }
+        }
+        return 'transparent';
+    });
+
+    const timeColor = computed(() => {
+        return chat.unread >= 1
+            ? '#25d366'
+            : 'grey';  
+    });
 </script>
 
 
@@ -76,11 +120,11 @@
         min-height: v-bind(chatHeight);
         gap: v-bind(chatPadding);
         padding-left: v-bind(chatPadding);
+        background-color: v-bind(activeColor);
     }
 
     .chat-container:hover {
         cursor: pointer;
-        background-color: #f0f1f4;
     }
 
     .chat-container .chat-details {
@@ -129,11 +173,21 @@
 
     .chat-container .chat-details .chat-name-and-time .time {
         font-size: .6rem;
-        color: grey
+        color: v-bind(timeColor);
     }
 
     .chat-container .chat-details .chat-preview .chat-preview-message {
         font-size: .7rem;
         color: grey;
+    }
+
+    .chat-container .chat-details .chat-preview .chat-icons .chat-unread {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-weight: bold;
+        color: white;
+        background-color: #25d366;
     }
 </style>

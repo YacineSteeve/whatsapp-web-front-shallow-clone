@@ -6,17 +6,21 @@ export default createStore({
         chats,
         searchValueChats: '',
         searchValueInbox: '',
-        inboxIsActive: true,
-        activeInbox: ''
+        inboxIsActive: false,
+        activeInbox: 0,
+    },
+    getters: {
+        getActiveChat(state) {
+            return state.chats.filter(chat => chat.id === state.activeInbox).pop();
+        }
     },
     mutations: {
-        // For testing
-        switchInboxStatus(state) {
-            state.inboxIsActive = !state.inboxIsActive;
-        },
-        /* ******************************** */
         setSearchValue(state, params) {
             state[params['model']] = params['newValue'];
+        },
+        setActiveInbox(state, id) {
+            state.inboxIsActive = true;
+            state.activeInbox = id;
         }
     },
     actions: {

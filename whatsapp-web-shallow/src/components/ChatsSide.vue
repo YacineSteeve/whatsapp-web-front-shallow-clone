@@ -8,9 +8,6 @@
                 v-bind:chat="chat"
                 v-bind:key="chat.id"/>
         </all-chats>
-        <!-- Test 
-        <br/>
-        <button v-on:click="switchInbox">Hello0</button> -->
     </div>
 </template>
 
@@ -40,12 +37,6 @@
     });
 
     const containerMinWidth = String(0.22 * window.screen.width) + 'px';
-
-    /* *********** Test ************** */
-
-    const switchInbox = () => {
-        store.commit('switchInboxStatus')
-    };
 </script>
 
 

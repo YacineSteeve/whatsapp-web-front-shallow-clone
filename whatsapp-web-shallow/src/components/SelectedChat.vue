@@ -1,20 +1,16 @@
 <template>
     <div class="selected-chat-container">
-        <nav-menu>
-            
-        </nav-menu>
+        <InboxHeader />
         <Inbox />
-        <nav-menu>
-            <h1>Ok</h1>
-        </nav-menu>
+        <NewMessageBar />
     </div>
 </template>
 
 
 <script setup>
-    import NavMenu from './NavMenu.vue';
     import Inbox from './Inbox.vue';
-
+    import InboxHeader from './InboxHeader.vue';
+    import NewMessageBar from './NewMessageBar.vue';
 
 </script>
 

@@ -122,7 +122,7 @@ const chats = [
 		name: "Karen Okonkwo",
 		phone_number: "+2348123456789",
 		whatsapp_name: "Karen O.",
-		unread: 0,
+		unread: 1,
 		messages: {
 			"04/06/2021": [
 				{
@@ -142,12 +142,6 @@ const chats = [
 					sender: 2,
 					time: "09:11:26",
 					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
 				},
 			],
 		},
@@ -184,7 +178,7 @@ const chats = [
 					content: getRandomSentence(),
 					sender: null,
 					time: "09:15:45",
-					status: "sent",
+					status: null,
 				},
 			],
 		},
@@ -196,7 +190,7 @@ const chats = [
 		name: "David Schwimmer",
 		phone_number: "+2348123456789",
 		whatsapp_name: "David",
-		unread: 1,
+		unread: 0,
 		messages: {
 			"04/06/2021": [
 				{
@@ -248,7 +242,7 @@ const chats = [
 					content: getRandomSentence(),
 					sender: null,
 					time: "09:15:45",
-					status: "read",
+					status: "unread",
 				},
 			],
 		},
@@ -399,12 +393,6 @@ const chats = [
 					sender: 6,
 					time: "09:11:26",
 					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
 				},
 			],
 		},
@@ -576,19 +564,7 @@ const chats = [
 					content: getRandomSentence(),
 					sender: null,
 					time: "08:15:45",
-					status: "read",
-				},
-				{
-					content: getRandomSentence(),
-					sender: 8,
-					time: "09:11:26",
 					status: null,
-				},
-				{
-					content: getRandomSentence(),
-					sender: null,
-					time: "09:15:45",
-					status: "read",
 				},
 			],
 		},

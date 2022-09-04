@@ -81,6 +81,7 @@ const chatMatchSearch = (chat, search) => {
 }
 
 export { 
-	getRandomSentence, 
-	chatMatchSearch
+	getRandomSentence,
+	chatMatchSearch,
+	getRawMessages
 };

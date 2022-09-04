@@ -4,29 +4,22 @@ import App from './App.vue'
 
 import './assets/main.css'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { 
-    faLockOpen, 
-    faSearch, 
-    faBars, 
-    faSpinner, 
-    faMessage, 
-    faEllipsisVertical, 
-    faInbox,
-    faThumbTack,
-    faChevronDown } from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFaceLaugh } from '@fortawesome/free-regular-svg-icons'
+import {
+    faLockOpen, faSearch, faBars, faSpinner, faMessage, faEllipsisVertical, 
+    faInbox, faThumbTack, faChevronDown, faCheck, faCheckDouble, faPaperclip, 
+    faMicrophone 
+} from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(faLockOpen)
-library.add(faSearch)
-library.add(faBars)
-library.add(faSpinner)
-library.add(faMessage)
-library.add(faEllipsisVertical)
-library.add(faInbox)
-library.add(faThumbTack)
-library.add(faChevronDown)
+library.add({
+    faLockOpen, faSearch, faBars, faSpinner, faMessage, faEllipsisVertical, 
+    faInbox, faThumbTack, faChevronDown, faCheck, faCheckDouble, faPaperclip, 
+    faMicrophone, faFaceLaugh
+})
 
 const root = document.querySelector(':root')
 

@@ -4,6 +4,10 @@
   text-decoration: none;
 }
 
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
 html, body, .main-container {
   margin: 0;
   padding: 0;
@@ -25,5 +29,5 @@ html, body, .main-container {
 }
 
 .scrolled::-webkit-scrollbar-thumb {
-  background: #d9dadc;
+  background: #c9cacc;
 }
