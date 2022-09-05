@@ -5,6 +5,8 @@ import ppGirl4 from "../assets/images/profile-picture-girl-4.jpeg";
 import ppBoy1 from "../assets/images/profile-picture-boy-1.jpeg";
 import ppBoy2 from "../assets/images/profile-picture-boy-2.jpeg";
 import ppBoy3 from "../assets/images/profile-picture-boy-3.jpeg";
+import img1 from "../assets/images/women.jpeg";
+import img2 from "../assets/images/women.png";
 import { getRandomSentence } from "./helpers.js";
 
 const chats = [
@@ -14,7 +16,7 @@ const chats = [
 		name: "Love of my fucking life ❤️💜",
 		phone_number: "+2348123456789",
 		whatsapp_name: "Beyonce",
-		unread: 3,
+		unread: 2,
 		messages: {
 			"04/06/2021": [
 				{
@@ -83,7 +85,7 @@ const chats = [
 					status: null,
 				},
 				{
-					image: true,
+					image: img1,
 					sender: 1,
 					time: "09:12:26",
 					status: null,
@@ -95,7 +97,7 @@ const chats = [
 					status: "read",
 				},
 				{
-					image: true,
+					image: img2,
 					sender: null,
 					time: "09:13:26",
 					status: null,
@@ -122,7 +124,7 @@ const chats = [
 		name: "Karen Okonkwo",
 		phone_number: "+2348123456789",
 		whatsapp_name: "Karen O.",
-		unread: 1,
+		unread: 0,
 		messages: {
 			"04/06/2021": [
 				{
@@ -392,6 +394,12 @@ const chats = [
 					content: getRandomSentence(),
 					sender: 6,
 					time: "09:11:26",
+					status: null,
+				},
+				{
+					content: getRandomSentence(),
+					sender: 6,
+					time: "09:15:01",
 					status: null,
 				},
 			],

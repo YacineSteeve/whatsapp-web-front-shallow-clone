@@ -1,13 +1,13 @@
 <template>
     <nav-menu>
-            <div class="inbox-header-container" :key="chat">
+            <div class="inbox-header-container">
                 <div class="inbox-infos">
                     <ProfilePicture 
                         v-bind:url="chat.profile_picture" 
                         v-bind:size="profilePictureSize" />
                     <div class="inbox-name">
                         {{ chat.name }}
-                        <h4>&ensp;<span style="color: red">TODO:</span> &ensp; clickables => button+focus &ensp; && &ensp; transitions &ensp; && &ensp; semi-backend</h4>
+                        <h4>&ensp;<span style="color: red">TODO:</span> &ensp; clickables => button+focus &ensp; && &ensp; transitions</h4>
                     </div>
                 </div>
                 <menu-icons>
@@ -24,11 +24,9 @@
     import ProfilePicture from './ProfilePicture.vue';
     import MenuIcons from './MenuIcons.vue';
     import IconWrapper from './IconWrapper.vue';
-    import { computed } from 'vue';
-    import { useStore } from 'vuex';
+    import { useAttrs } from 'vue';
 
-    const store = useStore();
-    const chat = computed(() => store.getters.getActiveChat);
+    const chat = useAttrs()['chat'];
 
     const paddingValue = String(0.019 * window.screen.height) + 'px';
     const profilePictureSize = String(0.028 * window.screen.width) + 'px';

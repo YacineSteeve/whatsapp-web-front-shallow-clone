@@ -14,6 +14,7 @@
                     size="xl" />
             </div>
             <input 
+                id="input-bar"
                 type="text"
                 placeholder="Type a message"
                 spellcheck="on"
@@ -31,6 +32,21 @@
 
 <script setup>
     import NavMenu from './NavMenu.vue';
+    import { onMounted } from 'vue';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
+
+    onMounted(() => {
+        const inputBar = document.getElementById('input-bar');
+
+        inputBar.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                store.commit('addNewMessageToChat', event.target.value);
+                event.target.value = '';
+            }
+        })
+    })
 
     const gapValue = String(0.0125 * window.screen.height) + 'px';
     const paddingInline = String(0.02 * window.screen.height) + 'px';

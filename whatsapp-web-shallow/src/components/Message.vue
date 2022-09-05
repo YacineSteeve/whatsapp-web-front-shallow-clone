@@ -9,6 +9,10 @@
     </div>
     <div 
         class="message-container" 
+        v-bind:class="{
+            'first-serie-left': firstOfSerie && message.sender !== null,
+            'first-serie-right': firstOfSerie && message.sender === null,
+            }"
         v-bind="$attrs"
         v-on:mouseenter="state.isHovered = true"
         v-on:mouseleave="state.isHovered = false">
@@ -21,8 +25,16 @@
                 color="white" />
         </div>
         <div class="message-bubble">
-            {{ message.content }}
-            <div class="message-time">
+            {{ message.content ? message.content : ''}}
+            <div 
+                class="message-image"
+                v-show="!message.content" >
+                <img 
+                    v-show="!message.content" 
+                    v-bind:src="message.image" 
+                    alt="Image" />
+            </div>
+            <div v-bind:class="['message-time', !message.content ? 'image-time' : 'text-time']">
                 <div>
                     {{ message.time.slice(0, 5) }}
                     <span v-show="message.sender === null">
@@ -98,7 +110,7 @@
     .message-container .message-bubble {
         width: fit-content;
         max-width: v-bind(bubbleMaxWidth);
-        min-width: v-bind(bubbleMinWidth);
+        /* min-width: v-bind(bubbleMinWidth); */
         height: fit-content;
         border-radius: v-bind(bubbleBorderRadius);
         padding-inline: v-bind(serieSeparatorHeight);
@@ -106,7 +118,56 @@
         background-color: v-bind(bubbleColor);
     }
 
-    .message-container .message-bubble .message-time {
+    .first-serie-left::before {
+        position: absolute;
+        top: 0;
+        left: -7px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 10px solid white;
+    }
+
+    .first-serie-right::after {
+        position: absolute;
+        top: 0;
+        right: -7px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 10px solid #d9fdd3;
+    }
+
+    .message-container .message-bubble .message-image {
+        width: fit-content;
+        margin-top: v-bind(separatorHeight);
+    }
+
+    .message-container .message-bubble .message-image img {
+        width: v-bind(bubbleMinWidth);
+        border-radius: v-bind(bubbleBorderRadius);
+        transform: scale(1);
+    }
+
+    .message-container .message-bubble .message-image::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 25px;
+        background-color: rgba(0, 0, 0 , .3);
+        filter: blur(5px);
+        border-bottom-left-radius: v-bind(bubbleBorderRadius);
+        border-bottom-right-radius: v-bind(bubbleBorderRadius);
+        overflow: hidden;
+    }
+
+    .message-container .message-bubble .text-time {
         float: right;
         display: flex;
         flex-direction: column;
@@ -114,6 +175,13 @@
         color: grey;
         height: v-bind(timeHeight);
         margin-left: v-bind(serieSeparatorHeight);
+    }
+
+    .message-container .message-bubble .image-time {
+        position: absolute;
+        right: calc(2 * v-bind(serieSeparatorHeight));
+        bottom: calc(3 * v-bind(emojiReactionPadding));
+        color: white;
     }
 
     .message-container .react-to-message {

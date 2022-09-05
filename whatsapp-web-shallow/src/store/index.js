@@ -21,6 +21,24 @@ export default createStore({
         setActiveInbox(state, id) {
             state.inboxIsActive = true;
             state.activeInbox = id;
+        },
+        addNewMessageToChat(state, message) {
+            const chat = this.getters.getActiveChat;
+
+            const today = new Date();
+
+            const newMessage = {
+                content: message,
+                sender: null,
+                time: `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`,
+                status: "unread"
+            };
+            
+            if (chat.messages.TODAY) {
+                chat.messages["TODAY"].push(newMessage);
+            } else {
+                chat.messages.TODAY = [newMessage];
+            }
         }
     },
     actions: {

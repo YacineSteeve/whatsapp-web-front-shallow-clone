@@ -1,8 +1,8 @@
 <template>
-    <div class="inbox-container" v-bind:key="chat">
+    <div class="inbox-container">
         <div class="veil scrolled">
             <DayMessagesGroup 
-                v-for="[day, messages], id of Object.entries(chat.messages)"
+                v-for="[day, messages] of Object.entries(chat.messages).reverse()"
                 v-bind:day="day"
                 v-bind:messages="messages" />
         </div>
@@ -11,12 +11,11 @@
 
 
 <script setup>
-    import { computed } from 'vue';
-    import { useStore } from 'vuex';
     import DayMessagesGroup from './DayMessagesGroup.vue';
+    import { useAttrs } from 'vue';
 
-    const store = useStore();
-    const chat = computed(() => store.getters.getActiveChat);
+    const chat = useAttrs()['chat'];
+
     const paddingBlock = String(0.02 * window.screen.height) + 'px';
 </script>
 
@@ -31,6 +30,8 @@
     }
 
     .inbox-container .veil {
+        display: flex;
+        flex-direction: column-reverse;
         position: absolute;
         top: 0;
         left: 0;
@@ -40,5 +41,10 @@
         padding-inline: 7%;
         overflow-y: scroll;
         background-color: rgba(255, 255, 255, .25);
+    }
+
+    .inbox-container .veil .inbox-end {
+        height: 0;
+        width: 100%;
     }
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <div class="selected-chat-container">
-        <InboxHeader />
-        <Inbox />
-        <NewMessageBar />
+    <div class="selected-chat-container"  v-bind:key="chat">
+        <InboxHeader v-bind:chat="chat" />
+        <Inbox v-bind:chat="chat" />
+        <NewMessageBar v-bind:chat="chat" />
     </div>
 </template>
 
@@ -11,7 +11,12 @@
     import Inbox from './Inbox.vue';
     import InboxHeader from './InboxHeader.vue';
     import NewMessageBar from './NewMessageBar.vue';
+    import { computed } from 'vue';
+    import { useStore } from 'vuex';
 
+    const store = useStore();
+
+    const chat = computed(() => store.getters.getActiveChat);
 </script>
 
 

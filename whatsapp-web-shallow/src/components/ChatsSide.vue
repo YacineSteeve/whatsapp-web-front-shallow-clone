@@ -4,7 +4,15 @@
         <all-chats>
             <Archived/>
             <Chat 
-                v-for="chat of filteredChats" 
+                v-for="chat of filteredChats.filter((chat) => chat.pinned)"
+                v-bind:chat="chat"
+                v-bind:key="chat.id"/>
+            <Chat 
+                v-for="chat of filteredChats.filter((chat) => !chat.pinned && chat.unread >= 1)"
+                v-bind:chat="chat"
+                v-bind:key="chat.id"/>
+            <Chat 
+                v-for="chat of filteredChats.filter((chat) => !chat.pinned && chat.unread === 0)"
                 v-bind:chat="chat"
                 v-bind:key="chat.id"/>
         </all-chats>
