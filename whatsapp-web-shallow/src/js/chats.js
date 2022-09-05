@@ -127,13 +127,13 @@ const chats = [
 			"04/06/2021": [
 				{
 					content: getRandomSentence(),
-					sender: 2,
+					sender: null,
 					time: "08:11:26",
 					status: null,
 				},
 				{
 					content: getRandomSentence(),
-					sender: null,
+					sender: 2,
 					time: "08:15:45",
 					status: "read",
 				},
@@ -170,7 +170,7 @@ const chats = [
 				},
 				{
 					content: getRandomSentence(),
-					sender: 3,
+					sender: null,
 					time: "09:11:26",
 					status: null,
 				},
@@ -266,7 +266,7 @@ const chats = [
 				},
 				{
 					content: getRandomSentence(),
-					sender: null,
+					sender: 5,
 					time: "08:15:45",
 					status: "read",
 				},
@@ -378,13 +378,13 @@ const chats = [
 			YESTERDAY: [
 				{
 					content: getRandomSentence(),
-					sender: 6,
+					sender: null,
 					time: "08:11:26",
 					status: null,
 				},
 				{
 					content: getRandomSentence(),
-					sender: null,
+					sender: 6,
 					time: "08:15:45",
 					status: "read",
 				},

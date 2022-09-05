@@ -6,8 +6,8 @@
                 alt="Please make sure you have an internet connection" />
         </div>
         <div class="text-wrapper">
-            <h1>Keep your phone connected</h1>
-            <p>Whatsapp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi</p>
+            <h1>Keep your device connected</h1>
+            <p>Whatsapp shallow does not connect to your phone to sync messages. <br/>To see your chats, connect your computer to Wi-Fi.</p>
         </div>
     </div>
 </template>

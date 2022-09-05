@@ -11,14 +11,14 @@ import { faFaceLaugh } from '@fortawesome/free-regular-svg-icons'
 import {
     faLockOpen, faSearch, faBars, faSpinner, faMessage, faEllipsisVertical, 
     faInbox, faThumbTack, faChevronDown, faCheck, faCheckDouble, faPaperclip, 
-    faMicrophone 
+    faMicrophone, faFaceGrinWide 
 } from '@fortawesome/free-solid-svg-icons'
 
 
 library.add({
     faLockOpen, faSearch, faBars, faSpinner, faMessage, faEllipsisVertical, 
     faInbox, faThumbTack, faChevronDown, faCheck, faCheckDouble, faPaperclip, 
-    faMicrophone, faFaceLaugh
+    faMicrophone, faFaceLaugh, faFaceGrinWide
 })
 
 const root = document.querySelector(':root')
