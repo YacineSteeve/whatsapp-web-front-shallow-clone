@@ -7,6 +7,7 @@
 
 <script setup>
     const iconPadding = String(0.02 * window.screen.height) + 'px';
+    const iconGap = String(0.01 * window.screen.height) + 'px';
 </script>
 
 
@@ -14,8 +15,9 @@
     .menu-icons-container {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        height: 100%;
+        height: fit-content;
+        width: fit-content;
+        gap: v-bind(iconGap);
         padding-inline: v-bind(iconPadding);
     }
 </style>

@@ -26,13 +26,15 @@
     onMounted(() => {
         const inbox = document.getElementsByClassName('veil')[0];
 
-        inbox.addEventListener('scroll', () => {
-            const dayContainers = document.getElementsByClassName('day-container');
-            
-            for (const container of dayContainers) {
-                container.classList.add('sticky-day');
-            }
-        })
+        if (inbox) {
+            inbox.addEventListener('scroll', () => {
+                const dayContainers = document.getElementsByClassName('day-container');
+                
+                for (const container of dayContainers) {
+                    container.classList.add('sticky-day');
+                }
+            })
+        }
 
         setInterval(() => {
             const dayContainers = document.getElementsByClassName('day-container');

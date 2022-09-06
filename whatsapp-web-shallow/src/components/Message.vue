@@ -14,17 +14,21 @@
             'first-serie-right': firstOfSerie && message.sender === null,
             }"
         v-bind="$attrs"
-        v-on:mouseenter="state.isHovered = true"
-        v-on:mouseleave="state.isHovered = false">
+        v-on:mouseenter="state.messageIsHovered = true"
+        v-on:mouseleave="state.messageIsHovered = false">
         <div 
-            v-show="state.isHovered && message.sender === null"
+            v-show="state.messageIsHovered && message.sender === null"
             class="react-to-message">
             <font-awesome-icon 
                 icon="fa-solid fa-face-grin-wide" 
                 size="xl"
                 color="white" />
         </div>
-        <div class="message-bubble">
+        <div 
+            class="message-bubble"
+            v-on:mouseenter="state.bubbleIsHovered = true"
+            v-on:mouseleave="state.bubbleIsHovered = false"
+            >
             {{ message.content ? message.content : ''}}
             <div 
                 class="message-image"
@@ -50,9 +54,18 @@
                     </span>
                 </div>
             </div>
+            <div 
+                class="message-options" 
+                v-show="state.bubbleIsHovered">
+                <font-awesome-icon
+                    v-show="state.bubbleIsHovered"
+                    icon="fa-solid fa-chevron-down"
+                    color="grey"
+                    size="lg" />
+            </div>
         </div>
         <div 
-            v-show="state.isHovered && message.sender !== null"
+            v-show="state.messageIsHovered && message.sender !== null"
             class="react-to-message">
             <font-awesome-icon 
                 icon="fa-solid fa-face-grin-wide" 
@@ -70,7 +83,10 @@
 
     const [message, firstOfSerie] = [attrs['message'], attrs['firstOfSerie']];
 
-    const state = reactive({ isHovered: false });
+    const state = reactive({ 
+        messageIsHovered: false, 
+        bubbleIsHovered: false 
+    });
 
     const emojiReactionPadding = String(0.005 * window.screen.height) + 'px';
     const bubbleMaxWidth = String(0.3 * window.screen.width) + 'px';
@@ -78,10 +94,16 @@
     const separatorHeight = String(0.0025 * window.screen.height) + 'px';
     const serieSeparatorHeight = String(0.015 * window.screen.height) + 'px';
     const timeHeight = String(0.03 * window.screen.height) + 'px';
+    const optionsHeight = String(0.083 * window.screen.width - 0.055 * window.screen.height - 20) + 'px';
     const bubbleBorderRadius = String(0.01 * window.screen.height) + 'px';
     const bubbleColor = message.sender === null
         ? '#d9fdd3'
         : 'white';
+    const optionsColor = message.image
+        ? 'transparent'
+        : message.sender === null
+            ? 'rgba(217, 253, 211, 1)'
+            : 'rgba(255, 255, 255, 1)';
     const contentSide = message.sender === null
         ? 'right'
         : 'left';
@@ -108,14 +130,30 @@
     }
 
     .message-container .message-bubble {
+        overflow: hidden;
         width: fit-content;
         max-width: v-bind(bubbleMaxWidth);
-        /* min-width: v-bind(bubbleMinWidth); */
+        word-break: break-all;
         height: fit-content;
         border-radius: v-bind(bubbleBorderRadius);
         padding-inline: v-bind(serieSeparatorHeight);
         padding-block: v-bind(emojiReactionPadding);
         background-color: v-bind(bubbleColor);
+    }
+
+    .message-container .message-bubble .message-options {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: v-bind(emojiReactionPadding);
+        right: v-bind(serieSeparatorHeight);
+        width: 20%;
+        height: calc(100% - v-bind(timeHeight));
+        min-height: v-bind(timeHeight);
+        max-height: v-bind(optionsHeight);
+        padding-right: v-bind(serieSeparatorHeight);
+        padding-top: v-bind(separatorHeight);
+        background: v-bind(optionsColor);
     }
 
     .first-serie-left::before {

@@ -1,5 +1,5 @@
 <template>
-    <button class="archived-container">
+    <button class="archived-container button">
         <div class="archived-icon-wrapper">
             <font-awesome-icon icon="fa-solid fa-inbox" color="#128c7e"/>
         </div>
@@ -30,14 +30,6 @@
         background: transparent;
         border: none;
         padding-inline: v-bind(elementsPadding);
-    }
-
-    .archived-container:hover {
-        cursor: pointer;
-    }
-
-    .archived-container:focus {
-        border: 2px solid black;
     }
 
     .archived-container > * {

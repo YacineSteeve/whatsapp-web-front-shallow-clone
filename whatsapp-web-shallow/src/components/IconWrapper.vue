@@ -1,19 +1,21 @@
 <template>
-    <div class="icon-container">
-        <font-awesome-icon v-bind="$attrs" size="lg"/>
-    </div>
+    <button type="button" class="icon-container button">
+        <font-awesome-icon v-bind="$attrs" size="lg" color="#404040"/>
+    </button>
 </template>
 
 
 <script setup>
-    const iconPadding = String(0.02 * window.screen.height) + 'px';
+    const iconHeight = String(0.05 * window.screen.height) + 'px';
 </script>
 
 
 <style scoped>
     .icon-container {
-        width: fit-content;
-        height: fit-content;
-        padding-inline: v-bind(iconPadding);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        height: v-bind(iconHeight);
     }
 </style>

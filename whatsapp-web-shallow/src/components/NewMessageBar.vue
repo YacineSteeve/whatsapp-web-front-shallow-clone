@@ -1,30 +1,32 @@
 <template>
     <nav-menu>
         <div class="message-bar-container">
-            <div class="message-bar-icon">
+            <button class="message-bar-icon button">
                 <font-awesome-icon 
                     icon="fa-regular fa-face-laugh"
                     color="dimgrey"
                     size="xl" />
-            </div>
-            <div class="message-bar-icon">
+            </button>
+            <button class="message-bar-icon button">
                 <font-awesome-icon  
                     icon="fa-solid fa-paperclip"
                     color="dimgrey"
                     size="xl" />
-            </div>
+            </button>
             <input 
                 id="input-bar"
                 type="text"
                 placeholder="Type a message"
                 spellcheck="on"
                 autofocus />
-            <div class="message-bar-icon">
+            <button 
+                class="message-bar-icon button"
+                v-on:click="playNotif">
                 <font-awesome-icon 
                     icon="fa-solid fa-microphone"
                     color="dimgrey" 
                     size="xl" />
-            </div>
+            </button>
         </div>
     </nav-menu>
 </template>
@@ -32,12 +34,35 @@
 
 <script setup>
     import NavMenu from './NavMenu.vue';
-    import { onMounted } from 'vue';
+    import { onMounted, reactive } from 'vue';
     import { useStore } from 'vuex';
 
-    const store = useStore();
+    const gapValue = String(0.0125 * window.screen.height) + 'px';
+    const paddingInline = String(0.01 * window.screen.height) + 'px';
+    const paddingBlock = String(0.01 * window.screen.height) + 'px';
+
+    const state = reactive({playing: false});
+
+    const playNotif = () => {
+        if (state.playing) {
+            state.audio.pause();
+            state.audio.currentTime = 0;
+            let delay = setTimeout(() => {
+                state.audio.play();
+                clearTimeout(delay)
+            }, 500);
+        } else {
+            if (!state.audio) {
+                const audio = new Audio('/src/assets/audio/notif_sound.ogg');
+                state['audio'] = audio;
+            }
+            state.audio.play();
+            state.playing = true;
+        }
+    };
 
     onMounted(() => {
+        const store = useStore();
         const inputBar = document.getElementById('input-bar');
 
         inputBar.addEventListener('keypress', (event) => {
@@ -46,11 +71,7 @@
                 event.target.value = '';
             }
         })
-    })
-
-    const gapValue = String(0.0125 * window.screen.height) + 'px';
-    const paddingInline = String(0.02 * window.screen.height) + 'px';
-    const paddingBlock = String(0.01 * window.screen.height) + 'px';
+    });
 </script>
 
 

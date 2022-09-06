@@ -31,3 +31,22 @@ html, body, .main-container {
 .scrolled::-webkit-scrollbar-thumb {
   background: #c9cacc;
 }
+
+body .button {
+  border: none;
+}
+
+body .button:focus {
+  outline: none;
+  border: 3px solid cyan;
+  border-radius: var(--scrollbar-width);
+}
+
+body .button:active {
+  outline: none;
+  border: none;
+}
+
+body .button:hover {
+  cursor: pointer;
+}
