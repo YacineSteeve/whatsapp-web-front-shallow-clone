@@ -3,10 +3,12 @@
         <div class="main-back-header"></div>
         <div class="main-back-footer"></div>
     </div>
-    <div class="main-window-container main-container">
-        <OnLineView v-if="isOnline"/>
-        <OffLineView v-else/>
-    </div>
+    <Transition name="bounce" appear>
+        <div class="main-window-container main-container">
+            <OnLineView v-if="isOnline"/>
+            <OffLineView v-else/>
+        </div>
+    </Transition>
 </template>
 
 
@@ -62,5 +64,17 @@
         left: 0;
         margin: 20px;
         background-color: #f0f2f5;
+    }
+
+    .bounce-enter-active {
+        transition: all .5s ease-out;
+    }
+
+    .bounce-enter-from {
+        transform: scale(1.3);
+    }
+
+    .bounce-enter-to {
+        transform: scale(1);
     }
 </style>

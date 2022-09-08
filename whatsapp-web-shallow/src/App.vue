@@ -3,14 +3,9 @@
 </template>
 
 
-<script>
+<script setup>
     import MainWindow from './components/MainWindow.vue'
 
-    export default {
-        components: {
-            MainWindow,
-        }
-    }
 </script>
 
 

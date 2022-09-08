@@ -7,7 +7,6 @@
                         v-bind:size="profilePictureSize" />
                     <div class="inbox-name">
                         {{ chat.name }}
-                        <h4>&emsp; &emsp; &emsp;<span style="color: red">TODO:</span> &ensp; transitions</h4>
                     </div>
                 </div>
                 <menu-icons>

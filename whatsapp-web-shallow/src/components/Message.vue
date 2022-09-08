@@ -16,14 +16,17 @@
         v-bind="$attrs"
         v-on:mouseenter="state.messageIsHovered = true"
         v-on:mouseleave="state.messageIsHovered = false">
-        <div 
-            v-show="state.messageIsHovered && message.sender === null"
-            class="react-to-message">
-            <font-awesome-icon 
-                icon="fa-solid fa-face-grin-wide" 
-                size="xl"
-                color="white" />
-        </div>
+        <Transition name="reaction">
+            <div 
+                v-show="state.messageIsHovered && message.sender === null"
+                class="react-to-message">
+                <font-awesome-icon 
+                    icon="fa-solid fa-face-grin-wide" 
+                    size="xl"
+                    color="white" />
+            </div>
+        </Transition>
+        
         <div 
             class="message-bubble"
             v-on:mouseenter="state.bubbleIsHovered = true"
@@ -57,21 +60,25 @@
             <div 
                 class="message-options" 
                 v-show="state.bubbleIsHovered">
-                <font-awesome-icon
-                    v-show="state.bubbleIsHovered"
-                    icon="fa-solid fa-chevron-down"
-                    color="grey"
-                    size="lg" />
+                <Transition name="chevron">
+                    <font-awesome-icon
+                        v-show="state.bubbleIsHovered"
+                        icon="fa-solid fa-chevron-down"
+                        color="grey"
+                        size="lg" />
+                </Transition>
             </div>
         </div>
-        <div 
-            v-show="state.messageIsHovered && message.sender !== null"
-            class="react-to-message">
-            <font-awesome-icon 
-                icon="fa-solid fa-face-grin-wide" 
-                size="xl"
-                color="white" />
-        </div>
+        <Transition name="reaction">
+            <div 
+                v-show="state.messageIsHovered && message.sender !== null"
+                class="react-to-message">
+                <font-awesome-icon 
+                    icon="fa-solid fa-face-grin-wide" 
+                    size="xl"
+                    color="white" />
+            </div>
+        </Transition>
     </div>
 </template>
 
@@ -234,5 +241,21 @@
 
     .message-container .react-to-message:hover {
         cursor: pointer;
+    }
+
+    .chevron-enter-active {
+        transition: all .1s ease-in-out;
+    }
+
+    .chevron-enter-from {
+        transform: translateX(v-bind(serieSeparatorHeight));
+    }
+
+    .reaction-enter-active {
+        transition: all .8s ease;
+    }
+
+    .reaction-enter-from {
+        opacity: 0;
     }
 </style>

@@ -51,11 +51,12 @@
                     <div 
                         v-show="chat.unread >= 1"
                         class="chat-unread">&ensp;{{ chat.unread }}&ensp;</div>
-                    
                     <span v-show="state.isHovered">&ensp;</span>
-                    <font-awesome-icon
-                        v-show="state.isHovered"
-                        icon="fa-solid fa-chevron-down" />
+                    <Transition name="chevron">
+                        <font-awesome-icon
+                            v-show="state.isHovered"
+                            icon="fa-solid fa-chevron-down" />
+                    </Transition>
                 </div>
             </div>
         </div>
@@ -189,5 +190,13 @@
         font-weight: bold;
         color: white;
         background-color: #25d366;
+    }
+
+    .chevron-enter-active {
+        transition: all .2s ease-in-out;
+    }
+
+    .chevron-enter-from {
+        transform: translateX(v-bind(chatPadding));
     }
 </style>

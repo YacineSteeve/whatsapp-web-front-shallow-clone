@@ -2,7 +2,7 @@ import ppGirl1 from "../assets/images/profile-picture-girl-1.jpeg";
 import ppGirl2 from "../assets/images/profile-picture-girl-2.jpeg";
 import ppGirl3 from "../assets/images/profile-picture-girl-3.jpeg";
 import ppGirl4 from "../assets/images/profile-picture-girl-4.jpeg";
-import ppBoy1 from "../assets/images/profile-picture-boy-1.jpeg";
+import ppBoy1 from "../assets/images/placeholder.jpg";
 import ppBoy2 from "../assets/images/profile-picture-boy-2.jpeg";
 import ppBoy3 from "../assets/images/profile-picture-boy-3.jpeg";
 import img1 from "../assets/images/women.jpeg";
