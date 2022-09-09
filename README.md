@@ -50,3 +50,4 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## License
 
+[MIT License](https://github.com/YacineSteeve/whatsapp-web-front-shallow-clone/blob/main/LICENSE)
