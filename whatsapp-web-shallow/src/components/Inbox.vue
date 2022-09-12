@@ -38,7 +38,7 @@
         height: 100%;
         width: 100%;
         padding-block: v-bind(paddingBlock);
-        padding-inline: 7%;
+        padding-inline: 5%;
         overflow-y: scroll;
         background-color: rgba(255, 255, 255, .25);
     }

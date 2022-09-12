@@ -579,5 +579,5 @@ const chats = [
 		pinned: false,
 	},
 ];
-// console.log(JSON.stringify(chats));
+
 export default chats;
