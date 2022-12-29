@@ -1,13 +1,9 @@
 # whatsapp-web-shallow
 
-A trial of cloning [Whatsapp Web](https://web.whatsapp.com/) front-end interface.
-
-&#9888;&#65039; This project does not take build steps into account. 
+A clone of [Whatsapp Web](https://web.whatsapp.com/) UI.
 
 
 ## Setup for Development
-
-This should help you get started with Vue 3 and Vite.
 
 
 ### Recommended IDE Setup
