@@ -22,19 +22,13 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
     git clone https://github.com/YacineSteeve/whatsapp-web-front-shallow-clone.git
     ```
 
-2. Move to the project directory :
-
-    ```
-    cd whatsapp-web-shallow
-    ```
-
-3. Install the dependencies with this command unsing [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) :
+2. Install the dependencies with this command unsing [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) :
 
     ```
     npm install
     ```
 
-4. Compile and start on a local server with :
+3. Compile and start on a local server with :
 
     ```
     npm run dev
