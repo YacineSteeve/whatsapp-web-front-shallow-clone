@@ -3,7 +3,7 @@
         <nav-menu>
             <div class="menu-container">
                 <ProfilePicture 
-                    url="./src/assets/images/profile-picture-boy-1.jpeg" 
+                    v-bind:url="profilePictureURL" 
                     v-bind:size="profilePictureSize"/>
                 <menu-icons>
                     <IconWrapper icon="fa-solid fa-spinner"/>
@@ -23,6 +23,7 @@
     import ProfilePicture from './ProfilePicture.vue';
     import MenuIcons from './MenuIcons.vue';
     import IconWrapper from './IconWrapper.vue';
+    import profilePictureURL from '@/assets/images/profile-picture-boy-1.jpeg';
 
     const navbarHeight = String(0.083 * window.screen.width - 20) + 'px';
     const paddingLeft = String(0.019 * window.screen.height) + 'px';

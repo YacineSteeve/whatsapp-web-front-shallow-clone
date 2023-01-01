@@ -36,6 +36,7 @@
     import NavMenu from './NavMenu.vue';
     import { onMounted, reactive } from 'vue';
     import { useStore } from 'vuex';
+    import audioURL from '@/assets/audio/notif_sound.ogg';
 
     const gapValue = String(0.0125 * window.screen.height) + 'px';
     const paddingInline = String(0.01 * window.screen.height) + 'px';
@@ -53,7 +54,7 @@
             }, 500);
         } else {
             if (!state.audio) {
-                const audio = new Audio('/src/assets/audio/notif_sound.ogg');
+                const audio = new Audio(audioURL);
                 state['audio'] = audio;
             }
             state.audio.play();
